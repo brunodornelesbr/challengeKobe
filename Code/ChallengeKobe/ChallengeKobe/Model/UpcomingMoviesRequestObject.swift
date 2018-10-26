@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 
 class UpcomingMoviesRequestObject: Mappable {
-  var success = false
+  var success = true
   var movieList = [Movie]()
     
     required convenience init?(map: Map) {

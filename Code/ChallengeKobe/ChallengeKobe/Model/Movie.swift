@@ -30,4 +30,11 @@ class Movie: Mappable {
         var genre_ids = [Int]()
         genre_ids <- map["genre_ids"]
     }
+    
+    func getPosterURL()->URL?{
+        guard poster_path != nil else {return nil}
+        let urlString = String(format:API.image_url,poster_path!)
+        
+        return URL(string: urlString)
+    }
 }
