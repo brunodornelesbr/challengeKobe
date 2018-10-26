@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154C005B2008B1E23917FE77 /* Pods_ChallengeKobe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2062EC042A1B29B843FDB6A3 /* Pods_ChallengeKobe.framework */; };
 		9A9636582183307D00E57AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9636572183307D00E57AA8 /* AppDelegate.swift */; };
 		9A96365A2183307D00E57AA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9636592183307D00E57AA8 /* ViewController.swift */; };
 		9A96365D2183307D00E57AA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A96365B2183307D00E57AA8 /* Main.storyboard */; };
 		9A96365F2183307F00E57AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A96365E2183307F00E57AA8 /* Assets.xcassets */; };
 		9A9636622183307F00E57AA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A9636602183307F00E57AA8 /* LaunchScreen.storyboard */; };
+		9A96366F218333BD00E57AA8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96366E218333BD00E57AA8 /* API.swift */; };
+		9A9636712183374A00E57AA8 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9636702183374A00E57AA8 /* Request.swift */; };
+		9A9636732183381D00E57AA8 /* UpcomingMoviesRequestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9636722183381D00E57AA8 /* UpcomingMoviesRequestObject.swift */; };
+		9A9636752183398D00E57AA8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9636742183398D00E57AA8 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2062EC042A1B29B843FDB6A3 /* Pods_ChallengeKobe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChallengeKobe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F91A934A03670DA7BD2ED92 /* Pods-ChallengeKobe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeKobe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeKobe/Pods-ChallengeKobe.debug.xcconfig"; sourceTree = "<group>"; };
 		9A9636542183307D00E57AA8 /* ChallengeKobe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeKobe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9636572183307D00E57AA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9636592183307D00E57AA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,11 @@
 		9A96365E2183307F00E57AA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A9636612183307F00E57AA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A9636632183307F00E57AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A96366E218333BD00E57AA8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		9A9636702183374A00E57AA8 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		9A9636722183381D00E57AA8 /* UpcomingMoviesRequestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesRequestObject.swift; sourceTree = "<group>"; };
+		9A9636742183398D00E57AA8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		EB0F3019BA46E795FF288A0E /* Pods-ChallengeKobe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeKobe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeKobe/Pods-ChallengeKobe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154C005B2008B1E23917FE77 /* Pods_ChallengeKobe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				9A9636562183307D00E57AA8 /* ChallengeKobe */,
 				9A9636552183307D00E57AA8 /* Products */,
+				9D90DF7AA9DF1145B5AAE20F /* Pods */,
+				9EE29492E9E608033EF26E22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +69,7 @@
 		9A9636562183307D00E57AA8 /* ChallengeKobe */ = {
 			isa = PBXGroup;
 			children = (
+				9A96366C218333A300E57AA8 /* Model */,
 				9A9636572183307D00E57AA8 /* AppDelegate.swift */,
 				9A9636692183314C00E57AA8 /* Controller */,
 				9A96366A2183316C00E57AA8 /* View */,
@@ -80,6 +96,42 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9A96366C218333A300E57AA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A96366D218333B000E57AA8 /* Network */,
+				9A9636722183381D00E57AA8 /* UpcomingMoviesRequestObject.swift */,
+				9A9636742183398D00E57AA8 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A96366D218333B000E57AA8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9A96366E218333BD00E57AA8 /* API.swift */,
+				9A9636702183374A00E57AA8 /* Request.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9D90DF7AA9DF1145B5AAE20F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F91A934A03670DA7BD2ED92 /* Pods-ChallengeKobe.debug.xcconfig */,
+				EB0F3019BA46E795FF288A0E /* Pods-ChallengeKobe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9EE29492E9E608033EF26E22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2062EC042A1B29B843FDB6A3 /* Pods_ChallengeKobe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A9636662183307F00E57AA8 /* Build configuration list for PBXNativeTarget "ChallengeKobe" */;
 			buildPhases = (
+				B4418FCA857FE796C651FDFC /* [CP] Check Pods Manifest.lock */,
 				9A9636502183307D00E57AA8 /* Sources */,
 				9A9636512183307D00E57AA8 /* Frameworks */,
 				9A9636522183307D00E57AA8 /* Resources */,
+				032047DF765116A962CF703E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,12 +200,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		032047DF765116A962CF703E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeKobe/Pods-ChallengeKobe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeKobe/Pods-ChallengeKobe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4418FCA857FE796C651FDFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChallengeKobe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A9636502183307D00E57AA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A9636732183381D00E57AA8 /* UpcomingMoviesRequestObject.swift in Sources */,
 				9A96365A2183307D00E57AA8 /* ViewController.swift in Sources */,
+				9A9636752183398D00E57AA8 /* Movie.swift in Sources */,
+				9A9636712183374A00E57AA8 /* Request.swift in Sources */,
+				9A96366F218333BD00E57AA8 /* API.swift in Sources */,
 				9A9636582183307D00E57AA8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +397,7 @@
 		};
 		9A9636672183307F00E57AA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F91A934A03670DA7BD2ED92 /* Pods-ChallengeKobe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +416,7 @@
 		};
 		9A9636682183307F00E57AA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB0F3019BA46E795FF288A0E /* Pods-ChallengeKobe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
