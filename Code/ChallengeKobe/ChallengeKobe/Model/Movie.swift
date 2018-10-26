@@ -15,7 +15,7 @@ class Movie: Mappable {
     var original_title = ""
     var poster_path : String?
     var backdrop_path : String?
-    var genres = [String]()
+    var genres = ["testGenre1" ,"TestGenre2"]
     
     
     required convenience init?(map: Map) {
