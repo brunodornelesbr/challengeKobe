@@ -10,21 +10,41 @@ import UIKit
 
 class MainViewController: UIViewController {
     var showingMovies = [Movie]()
+    var lastRequest : UpcomingMoviesRequestObject?
     
     @IBOutlet weak var collectionView: UICollectionView!
+    private var refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewSetup()
-        requestUpcomingMovies()
+        searchBarSetup()
+        requestUpcomingMovies(page: 1)
     }
     
-    func requestUpcomingMovies(){
-        Request.requestUpcomingMoviesList(completion: {movies in
+    override func viewDidAppear(_ animated: Bool) {
+      
+
+    }
+    
+    func requestUpcomingMovies(page : Int){
+        guard page <= lastRequest?.total_pages ?? Int(FP_INFINITE) else {return}
+        Request.requestUpcomingMoviesList(page:page,completion: {movies in
             if movies?.success ?? false{
-                self.showingMovies = (movies?.movieList)!
-                self.collectionView.reloadSections([0])
+                DispatchQueue.main.async {
+                    self.showingMovies.append(contentsOf: movies!.movieList)
+                    self.collectionView.reloadSections([0])
+                    self.lastRequest = movies
+                    self.refreshControl.endRefreshing()
+                }
+               
             }
         })
+    }
+
+    @objc func refreshMovies(){
+        showingMovies = []
+        lastRequest = nil
+        requestUpcomingMovies(page: 1)
     }
 
     /*
@@ -52,19 +72,46 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
         return cel
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath)
+    {
+        if indexPath.row >= showingMovies.count-5
+        {
+            requestUpcomingMovies(page: (lastRequest?.page ?? 0) + 1)
+        }
+    }
+    
     func collectionViewSetup(){
         collectionView.register(UINib(nibName: MovieCollectionViewCell.xibName, bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.reuseIdentifier)
-        
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.refreshControl = refreshControl
         
-        let search = UISearchController(searchResultsController: nil)
-       // search.searchResultsUpdater = self
-        search.searchBar.barStyle = .black
-        self.navigationItem.searchController = search
+        self.extendedLayoutIncludesOpaqueBars = true
+        refreshControl.addTarget(self, action: #selector(refreshMovies), for: .valueChanged)
 
+        refreshControl.tintColor = .white
+        let attributedStringColor = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to update movies!", attributes: attributedStringColor)
+     }
+    
+    
+    
+    
+}
+
+
+extension MainViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        return
     }
     
     
-    
+    func searchBarSetup(){
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.searchBar.barStyle = .black
+        search.searchBar.placeholder = "Search upcoming movies"
+        definesPresentationContext = true
+        self.navigationItem.searchController = search
+    }
 }

@@ -18,9 +18,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="125" height="268"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1v-rL-dlg">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolder" translatesAutoresizingMaskIntoConstraints="NO" id="a1v-rL-dlg">
                         <rect key="frame" x="0.0" y="0.0" width="125" height="229"/>
-                        <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.027450980392156862" green="0.10980392156862745" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piratas do caribe e os manos perdidos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Nn9-ja-no2">
                         <rect key="frame" x="5" y="237.5" width="115" height="30.5"/>
@@ -49,4 +50,7 @@
             <point key="canvasLocation" x="4" y="52.173913043478265"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="placeHolder" width="96" height="96"/>
+    </resources>
 </document>
