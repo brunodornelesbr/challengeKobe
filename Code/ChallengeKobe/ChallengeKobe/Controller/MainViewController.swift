@@ -18,7 +18,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         collectionViewSetup()
         searchBarSetup()
-        requestUpcomingMovies(page: 1)
+        Request.updateGenres {
+            self.requestUpcomingMovies(page: 1)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

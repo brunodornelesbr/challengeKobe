@@ -12,21 +12,22 @@ import UIKit
 class Request: NSObject {
    static var isFetchInProgress = false
    static func requestUpcomingMoviesList(page : Int = 1,completion:@escaping(UpcomingMoviesRequestObject?)->()){
-    // 1
     guard !isFetchInProgress else {
         return
     }
-    
-    // 2
     isFetchInProgress = true
-    
         let url = String(format:API.upcomingMovies_url, page)
-        
         Alamofire.request(url,method: .get, parameters : nil, headers : nil).responseObject(completionHandler: {(response:DataResponse<UpcomingMoviesRequestObject>) in
             isFetchInProgress = false
             completion(response.result.value)
-
         })
-        
+    }
+    
+    static func updateGenres(completion:@escaping()->()){
+        let url = API.genre_list
+        Alamofire.request(url,method: .get, parameters : nil, headers : nil).responseObject(completionHandler: {(response:DataResponse<Genres>) in
+            completion()
+            
+        })
     }
 }

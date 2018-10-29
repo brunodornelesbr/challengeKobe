@@ -21,6 +21,9 @@ class DetailsViewController: UIViewController {
         }
         self.title = movie.original_title
         overviewTextView.text = movie.overview
+        
+        var detailString = "Genre: \(movie.genres) \nRelease date: \(DateFormatter.formatToShow(date: movie.release_date))"
+        detailsTextView.text = detailString
         self.navigationItem.largeTitleDisplayMode = .never
       
         // Do any additional setup after loading the view.
