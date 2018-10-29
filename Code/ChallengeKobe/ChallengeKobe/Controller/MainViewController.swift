@@ -112,10 +112,9 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.refreshControl = refreshControl
-        
         self.extendedLayoutIncludesOpaqueBars = true
+        
         refreshControl.addTarget(self, action: #selector(refreshMovies), for: .valueChanged)
-
         refreshControl.tintColor = .white
         let attributedStringColor = [NSAttributedString.Key.foregroundColor : UIColor.white]
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to update movies!", attributes: attributedStringColor)
@@ -143,6 +142,7 @@ extension MainViewController : UISearchResultsUpdating {
         search.searchBar.barStyle = .black
         search.searchBar.placeholder = "Search upcoming movies"
         search.dimsBackgroundDuringPresentation = false
+        search.searchBar.tintColor = .white
         self.navigationItem.searchController = search
     }
 }
