@@ -102,7 +102,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if isSearching{
+        if search.isActive{
         self.search.dismiss(animated: true, completion: {self.performSegue(withIdentifier: "showDetail", sender: self.showingMovies[indexPath.row])})
         } else {  self.performSegue(withIdentifier: "showDetail", sender: self.showingMovies[indexPath.row])}
     }
