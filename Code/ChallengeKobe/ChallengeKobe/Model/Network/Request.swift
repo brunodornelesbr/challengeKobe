@@ -10,33 +10,24 @@ import AlamofireObjectMapper
 import UIKit
 
 class Request: NSObject {
-    
+   static var isFetchInProgress = false
    static func requestUpcomingMoviesList(page : Int = 1,completion:@escaping(UpcomingMoviesRequestObject?)->()){
+    guard !isFetchInProgress else {
+        return
+    }
+    isFetchInProgress = true
         let url = String(format:API.upcomingMovies_url, page)
-        
         Alamofire.request(url,method: .get, parameters : nil, headers : nil).responseObject(completionHandler: {(response:DataResponse<UpcomingMoviesRequestObject>) in
-            
+            isFetchInProgress = false
             completion(response.result.value)
         })
-        
     }
-//    func trainingActivities(token : String, moduleId : Int, completion:@escaping (ActivityList?)->()){
-//        let url = String(format: Api.url_activity, moduleId)
-//        
-//        self.headers = [
-//            "Authorization": "Bearer " + token
-//        ]
-//        
-//        Alamofire.request(url, method: .get, parameters: nil, headers: headers)
-//            .responseObject { (response: DataResponse<ActivityList>) in
-//                if response.result.isSuccess {
-//                    completion(response.result.value)
-//                    
-//                } else {
-//                    completion(nil)
-//                }
-//        }
-//        
-//        
-//    }
+    
+    static func updateGenres(completion:@escaping()->()){
+        let url = API.genre_list
+        Alamofire.request(url,method: .get, parameters : nil, headers : nil).responseObject(completionHandler: {(response:DataResponse<Genres>) in
+            completion()
+            
+        })
+    }
 }
