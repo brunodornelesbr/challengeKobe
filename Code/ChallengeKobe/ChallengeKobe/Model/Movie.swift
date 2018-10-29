@@ -16,8 +16,8 @@ class Movie: Mappable {
     var poster_path : String?
     var backdrop_path : String?
     var genres = ["testGenre1" ,"TestGenre2"]
-    
-    
+    var release_date : Date?
+    var overview = ""
     required convenience init?(map: Map) {
         self.init()
     }
@@ -27,8 +27,14 @@ class Movie: Mappable {
         original_title <- map["original_title"]
         poster_path <- map["poster_path"]
         backdrop_path <- map["backdrop_path"]
+        overview <- map["overview"]
+
         var genre_ids = [Int]()
         genre_ids <- map["genre_ids"]
+        
+        var release = ""
+        release<-map["release_date"]
+        release_date = DateFormatter.formatFromAPI(string: release)
     }
     
     func getPosterURL()->URL?{
@@ -36,5 +42,10 @@ class Movie: Mappable {
         let urlString = String(format:API.image_url,poster_path!)
         
         return URL(string: urlString)
+    }
+    
+    func setDate(string : String){
+       
+        
     }
 }

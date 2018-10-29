@@ -68,11 +68,107 @@
                     <navigationItem key="navigationItem" title="Upcoming Movies" id="ReC-kF-eDG"/>
                     <connections>
                         <outlet property="collectionView" destination="kKp-k9-vat" id="TOr-Y3-1Dz"/>
+                        <segue destination="pfx-8E-LMn" kind="show" identifier="showDetail" id="6DG-YF-J8d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8K-Cn-WQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135" y="-385"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="w73-eO-wdr">
+            <objects>
+                <viewController id="pfx-8E-LMn" customClass="DetailsViewController" customModule="ChallengeKobe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HlB-SG-3CN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MVN-CD-9GU">
+                                <rect key="frame" x="10" y="30" width="151" height="252"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="Ot4-nr-xhJ"/>
+                                    <constraint firstAttribute="height" constant="252" id="tdu-ka-KcM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jk3-lw-Ndd">
+                                <rect key="frame" x="182" y="30" width="176" height="252"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roY-Mw-Fpb">
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2an-es-nLO">
+                                        <rect key="frame" x="0.0" y="22.5" width="176" height="229.5"/>
+                                        <color key="backgroundColor" red="0.033242937815252054" green="0.13469338051398205" blue="0.17446882464914903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6M-yG-fj9">
+                                <rect key="frame" x="16" y="300" width="96.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIu-Me-nof">
+                                <rect key="frame" x="16" y="331" width="342" height="171"/>
+                                <color key="backgroundColor" red="0.033242937819999999" green="0.13469338049999999" blue="0.17446882459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.027450980392156862" green="0.10980392156862745" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MVN-CD-9GU" firstAttribute="top" secondItem="l4b-BP-ccW" secondAttribute="top" constant="30" id="Cot-Fd-0Ts"/>
+                            <constraint firstItem="jk3-lw-Ndd" firstAttribute="top" secondItem="MVN-CD-9GU" secondAttribute="top" id="Ngn-Ay-NAo"/>
+                            <constraint firstItem="jk3-lw-Ndd" firstAttribute="bottom" secondItem="MVN-CD-9GU" secondAttribute="bottom" id="Pn5-1B-iKE"/>
+                            <constraint firstItem="K6M-yG-fj9" firstAttribute="top" secondItem="MVN-CD-9GU" secondAttribute="bottom" constant="18" id="UV3-ww-QNz"/>
+                            <constraint firstItem="hIu-Me-nof" firstAttribute="leading" secondItem="K6M-yG-fj9" secondAttribute="leading" id="VvH-as-Vp3"/>
+                            <constraint firstItem="hIu-Me-nof" firstAttribute="trailing" secondItem="jk3-lw-Ndd" secondAttribute="trailing" id="XkK-wJ-xDc"/>
+                            <constraint firstItem="hIu-Me-nof" firstAttribute="top" secondItem="K6M-yG-fj9" secondAttribute="bottom" constant="8.5" id="Zl9-mM-qC1"/>
+                            <constraint firstItem="jk3-lw-Ndd" firstAttribute="leading" secondItem="MVN-CD-9GU" secondAttribute="trailing" constant="21" id="adP-xM-Vom"/>
+                            <constraint firstItem="l4b-BP-ccW" firstAttribute="bottom" secondItem="hIu-Me-nof" secondAttribute="bottom" constant="49" id="bCe-Sr-4hl"/>
+                            <constraint firstItem="K6M-yG-fj9" firstAttribute="leading" secondItem="l4b-BP-ccW" secondAttribute="leading" constant="16" id="kel-1B-OGr"/>
+                            <constraint firstItem="MVN-CD-9GU" firstAttribute="leading" secondItem="l4b-BP-ccW" secondAttribute="leading" constant="10" id="lw7-8P-N6X"/>
+                            <constraint firstItem="l4b-BP-ccW" firstAttribute="trailing" secondItem="jk3-lw-Ndd" secondAttribute="trailing" constant="17" id="qNh-Yq-ozg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l4b-BP-ccW"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailsTextView" destination="2an-es-nLO" id="ZNQ-Cm-zbc"/>
+                        <outlet property="overviewTextView" destination="hIu-Me-nof" id="kRr-54-v5Y"/>
+                        <outlet property="posterImage" destination="MVN-CD-9GU" id="xIE-5I-umV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYT-tr-70h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221.5999999999999" y="-385.45727136431788"/>
         </scene>
     </scenes>
 </document>
