@@ -23,6 +23,20 @@ class Request: NSObject {
         })
     }
     
+    static func searchMovie(query : String,page : Int = 1,completion:@escaping(UpcomingMoviesRequestObject?)->()){
+        guard !isFetchInProgress else {
+            return
+        }
+        isFetchInProgress = true
+        let url = String(format:API.search_movie,query,page)
+        Alamofire.request(url,method: .get, parameters : nil, headers : nil).responseObject(completionHandler: {(response:DataResponse<UpcomingMoviesRequestObject>) in
+            isFetchInProgress = false
+            completion(response.result.value)
+        })
+    }
+    
+    
+    
     static func updateGenres(completion:@escaping()->()){
         let url = API.genre_list
         Alamofire.request(url,method: .get, parameters : nil, headers : nil).responseObject(completionHandler: {(response:DataResponse<Genres>) in
@@ -30,4 +44,6 @@ class Request: NSObject {
             
         })
     }
+    
+    
 }
